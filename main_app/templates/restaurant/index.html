@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Reviews</h1>
+
+{% for restaurant in restaurants %}
+<a href="{% url 'detail' restaurant.id%}">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ restaurant.name }}</span>
+      <p>Type: {{ restaurant.type }}</p>
+      <p>Review: {{ restaurant.review }}</p>
+      <p>Stars: {{ restaurant.stars }}</p>
+    </div>
+  </div>
+</a>
+{% endfor %}
+
+{% endblock %}
+
